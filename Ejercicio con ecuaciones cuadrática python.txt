@@ -1,0 +1,178 @@
+import math
+a = float(input("Ingrese valor de a: "))
+b = float(input("Ingrese valor de b: "))
+c = float(input("Ingrese valor de c: "))
+d = b**2 -4*a*c
+print(d)
+if d > 0:
+  x1 = (-b + math.sqrt(d))/(2*a)
+  x2 = (-b - math.sqrt(d))/(2*a)
+  print("Hay dos soluciones: ", x1, x2)
+elif d == 0:
+    x = -b/(2*a)
+    print("Hay una solución", x)
+else:
+    print("No tiene soluciones reales")
+     
+Ingrese valor de a: 14
+Ingrese valor de b: 2
+Ingrese valor de c: 20
+-1116.0
+No tiene soluciones reales
+Ejercicio número Par o Impar
+
+número = int(input("Ingrese el número que desee "))
+print("Par" if nú mero % 2 == 0 else "Impar")
+     
+Ingrese el número que desee 9463468461
+Impar
+Ejercicio Año bisisesto
+
+año = int(input("DIgite el Año que desee: "))
+if (año % 4 == 0 and año % 100 != 0)or(año % 400 == 0):
+ print("El año es bisiesto")
+else:
+ print("El año no es bisiesto")
+     
+DIgite el Año que desee: 2016
+El año es bisiesto
+Ejercicio personas de la tercera edad
+
+nombre = input("Nombre: ")
+edad = int(input("Edad: "))
+if edad>= 70:print("Tiene prioridad")
+else:
+  print("No tiene prioridad")
+     
+Nombre: Oscar
+Edad: 20
+No tiene prioridad
+Ejercicio Número mayor
+
+a = float(input("Ingrese el valor que quiera para a "))
+b = float(input("Ingrese el valor que quiera para b "))
+c = float(input("Ingrese el valor que quiera para c "))
+if a>b and a>c:
+  print("El mayor número es:",a)
+elif b>a and b>c:
+  print("El mayor número es:",b)
+elif c>b and c>a:
+  print("El mayor número es:",c)
+elif a==b==c:
+  print("Los tres números tienen el mismo valor")
+     
+Ingrese el valor que quiera para a 70
+Ingrese el valor que quiera para b 490
+Ingrese el valor que quiera para c 1465
+El mayor número es: 1465.0
+Ejercicio tipo de triángulo
+
+(a)= float(input("Ingrese el valor que quiera para Cateto(a) "))
+(b)= float(input("Ingrese el valor que quiera para Cateto(b) "))
+(c)= float(input("Ingrese el valor que quiera para Cateto(c) "))
+if (a)==(b) or  (b)== (c) or (a)== (c) :
+  print("El triángulo es Isóceles ")
+elif (a)==(b)==(c) :
+  print("El triángulo es Equilatero ")
+else:
+  print("El triángulo es Escaleno")
+     
+Ingrese el valor que quiera para Cateto(a) 50
+Ingrese el valor que quiera para Cateto(b) 10
+Ingrese el valor que quiera para Cateto(c) 50
+El triángulo es Isóceles 
+Ejercicio IMC
+
+nombre= input("Nombres: ")
+peso=float(input("Peso: "))
+altura=float(input("altura: "))
+imc=peso/(altura**2)
+if imc<18.5:
+  cat="Bajo de peso"
+  desc="Debes priorizar el aumento de calorías y carbohidratos"
+elif imc<25:
+  cat="Normal"
+  desc="Mantente en tus hábitos saludables"
+elif imc<30:
+  cat="Sobrepeso"
+  desc="Debes hacer más ejercicio y reducir los carbohidratos"
+else:
+  cat="obesidad"
+  dec="Acuda a un especialista"
+print(nombre,"estás",cat)
+print("Recomendación:", desc)
+     
+Nombres: Samuel
+Peso: 45
+altura: 1.52
+Samuel estás Normal
+Recomendación: Mantente en tus hábitos saludables
+Ejercicio calculadora
+
+print("Va a digitar el primer número.")
+print("Una vez haya digitado el primer número, digita el segundo.")
+print("Una vez haya digitado ambos números, digita el operador que sea, puede ser +,-,*,/")
+a = float(input())
+b = float(input())
+op = input("operador: ")
+if op=="+":
+  print(a+b)
+elif op=="-":
+  print(a-b)
+elif op=="*":
+  print(a*b)
+elif op=="/":
+  print(a/b if b!=0 else "Error")
+     
+Va a digitar el primer número.
+Una vez haya digitado el primer número, digita el segundo.
+Una vez haya digitado ambos números, digita el operador que sea, puede ser +,-,*,/
+7
+9
+operador: /
+0.7777777777777778
+
+
+Ejercicio Calificación en letras
+
+print("Digite la calificación que obtuvo, entre un rango de 0-100, a continuación podrá ver si aprobó o no ")
+n=float(input())
+if n>=90: print("A")
+elif n>=80: print("B")
+elif n>=60: print("C")
+elif n>=60: print("D")
+else: print("F")
+     
+Digite la calificación que obtuvo, entre un rango de 0-100, a continuación podrá ver si aprobó o no 
+79.989999
+C
+Ejercicio Día de la semana
+
+print("Va a digitar el número que desee y ese número va a ser correspondiente con un día de la semana")
+d=int(input())
+dias=["","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
+print(dias[d] if 1<=d<7 else "Inválido")
+     
+Va a digitar el número que desee y ese número va a ser correspondiente con un día de la semana
+7
+Inválido
+Ejercicio Validar triángulo
+
+a,b,c = map(float,input("Ingrese los 3 lados: ").split())
+if a>0 and b>0 and c>0:
+    if a+b>c and a+c>b and b+c>a:
+        if a==b==c:
+            tipo="Equilátero"
+        elif a==b or b==c or a==c:
+            tipo="Isósceles"
+        else:
+            tipo="Escaleno"
+        print("Sí se puede formar un triángulo.")
+        print("Tipo de triángulo:", tipo)
+    else:
+        print("No se puede formar un triángulo.")
+else:
+    print("Los lados deben ser mayores que 0.")
+     
+Ingrese los 3 lados: 464646 4684686 486884
+No se puede formar un triángulo.
