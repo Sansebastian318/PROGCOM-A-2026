@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Elecciones {
+    public static void main(String[] args) {
+        String[] candidatos = {"Candidato1", "Candidato2", "Candidato3", "Candidato4", "Candidato5"};
+        int[] votos = {10, 20, 15, 5, 8}; // example votes
+        int n = 10; // number of voters in second round, example value
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println(candidatos[i] + " : " + votos[i] + " votos");
+        }
+
+        int max1 = 0;
+        int max2 = 1;
+
+        if (votos[max2] > votos[max1]) {
+            int temp = max1;
+            max1 = max2;
+            max2 = temp;
+        }
+
+        for (int i = 2; i < 5; i++) {
+            if (votos[i] > votos[max1]) {
+                max2 = max1;
+                max1 = i;
+            } else if (votos[i] > votos[max2]) {
+                max2 = i;
+            }
+        }
+
+        System.out.println("Pasan a segunda vuelta:");
+        System.out.println(candidatos[max1]);
+        System.out.println(candidatos[max2]);
+
+        int[] votos2 = {0, 0};
+
+        System.out.println("Segunda vuelta");
+        System.out.println("1 - " + candidatos[max1]);
+        System.out.println("2 - " + candidatos[max2]);
+
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            System.out.print("Votante " + (i + 1) + ", elija (1-2): ");
+            int voto = scanner.nextInt();
+            if (voto == 1) {
+                votos2[0]++;
+            } else if (voto == 2) {
+                votos2[1]++;
+            } else {
+                System.out.println("Voto inválido");
+            }
+        }
+        scanner.close();
+
+        System.out.println("Resultados de la segunda vuelta:");
+        System.out.println(candidatos[max1] + " : " + votos2[0] + " votos");
+        System.out.println(candidatos[max2] + " : " + votos2[1] + " votos");
+
+        if (votos2[0] > votos2[1]) {
+            System.out.println("Ganador: " + candidatos[max1]);
+        } else if (votos2[1] > votos2[0]) {
+            System.out.println("Ganador: " + candidatos[max2]);
+        } else {
+            System.out.println("Empate en la segunda");
+        }
+    }
+}
