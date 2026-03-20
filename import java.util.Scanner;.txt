@@ -1,0 +1,24 @@
+import java.util.Scanner;
+import java.util.Scanner;//Para importar la librería del teclado
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //Saludar al mundo
+        System.out.println("Hola mundo, distrito PROGCOM");
+        //Creando un objeto tipo scaner
+        Scanner leer= new Scanner(System.in);
+        //Se imprime la pregunta
+        System.out.println("Está lloviendo?");
+        //Creando un objeto que recibira la respuesta
+        String respuesta= leer.nextLine();
+
+        System.out.println("Tu respuesta fue "+respuesta);
+        //Programandocon if/else
+        if (respuesta=="no");{
+            System.out.println("Te recomiendo ir al parque");
+        }
+
+
+    }
+}
